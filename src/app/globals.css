@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Sukhumvit";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/sukhumvit/SukhumvitSet-Light.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Sukhumvit";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/sukhumvit/SukhumvitSet-Bold.woff") format("woff");
+  }
+
+  svg {
+    @apply transition;
+  }
+
+  .slick-dots {
+   @apply bg-primary
+}
+}
+
+@layer components {
+  .transition-responsive {
+    @apply transition-all duration-200 md:duration-200 lg:duration-200;
+  }
+  .btn-primary {
+    @apply transition-responsive rounded-full border-2 border-primary bg-primary px-3 py-2 text-sm text-white;
+  }
+  .btn-social {
+    @apply transition-responsive size-14 rounded-full shadow-md hover:ring-4 ;
+  }
+
+  .btn-dark {
+    @apply border-primary bg-primary text-white hover:ring-primary;
+  }
+
+  .btn-light {
+    @apply border-white bg-white text-primary hover:ring-white;
+  }
+
+  /* Footer Menu */
+  .accordion-item {
+    @apply overflow-hidden;
+  }
+
+  .accordion-content {
+    @apply overflow-hidden transition-[max-height] duration-300 ease-in-out;
+  }
+
+  .accordion-content.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .accordion-icon {
+    @apply float-right transition-transform duration-300;
+  }
+
+  .accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Slick image */
+  .slick-carousel .slick-active{
+    @apply ring-2 rounded-lg ring-offset-2
+  }
+}
